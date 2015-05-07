@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.kenweezy.kazi_app" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:name="com.app.kenweezy.kazi_app.MainActivity"
+            android:label="@string/app_name" >
+            <meta-data android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow"/>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:name="com.app.kenweezy.kazi_app.Login"
+            android:label="@string/app_name"
+            android:parentActivityName="com.app.kenweezy.kazi_app.MainActivity"
+            >
+            <meta-data android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow"/>
+            <intent-filter>
+                <action android:name="com.app.kenweezy.kazi_app.LOGIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:name="com.app.kenweezy.kazi_app.Register"
+            android:label="@string/app_name"
+            android:parentActivityName="com.app.kenweezy.kazi_app.MainActivity"
+            >
+            <meta-data android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow"/>
+            <intent-filter>
+                <action android:name="com.app.kenweezy.kazi_app.REGISTER" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:name="com.app.kenweezy.kazi_app.LoginRedirect"
+            android:label="@string/app_name"
+            android:parentActivityName="com.app.kenweezy.kazi_app.MainActivity"
+            >
+            <meta-data android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow"/>
+            <intent-filter>
+                <action android:name="com.app.kenweezy.kazi_app.LOGINREDIRECT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:name="com.app.kenweezy.kazi_app.AddProject"
+            android:label="@string/app_name"
+            android:parentActivityName="com.app.kenweezy.kazi_app.MainActivity"
+            >
+            <meta-data android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow"/>
+            <intent-filter>
+                <action android:name="com.app.kenweezy.kazi_app.ADDPROJECT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:name="com.app.kenweezy.kazi_app.AddTask"
+            android:label="@string/app_name"
+            android:parentActivityName="com.app.kenweezy.kazi_app.MainActivity"
+            >
+            <meta-data android:name="android.support.UI_OPTIONS"
+                android:value="splitActionBarWhenNarrow"/>
+            <intent-filter>
+                <action android:name="com.app.kenweezy.kazi_app.ADDTASK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="fill_parent"
+
+    android:layout_height="fill_parent"
+
+    android:orientation="vertical"
+
+    android:gravity="center_vertical"
+
+    android:layout_marginLeft="20dp"
+
+    android:layout_marginRight="20dp"
+    android:background="#87ceeb"
+
+    >
+
+
+
+    <EditText
+
+    android:id="@+id/projectName"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="wrap_content"
+
+    android:hint="project name"
+
+    android:ems="10"
+
+    android:inputType="textPersonName" />
+
+
+
+    <EditText
+
+        android:id="@+id/startDate"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:hint="start date"
+
+        android:ems="10"
+
+        android:inputType="datetime" />
+
+
+
+    <EditText
+
+        android:id="@+id/endDate"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:hint="end date"
+
+        android:ems="10"
+
+        android:inputType="date" >
+
+
+        <requestFocus />
+
+    </EditText>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content" >
+
+
+
+
+
+
+        <Button
+
+            android:id="@+id/add"
+
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+
+            android:layout_weight="0.5"
+
+            android:text="add project" />
+
+
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
