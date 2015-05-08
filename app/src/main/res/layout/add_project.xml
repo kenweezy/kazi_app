@@ -17,55 +17,71 @@
     >
 
 
-
-    <EditText
-
-    android:id="@+id/projectName"
-
-    android:layout_width="match_parent"
-
+<TextView
     android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:text="choose project"
+    android:gravity="center"
+    />
+  <Spinner
+      android:id="@+id/spinner"
+      android:gravity="center"
 
-    android:hint="project name"
-
-    android:ems="10"
-
-    android:inputType="textPersonName" />
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content">
 
 
-
-    <EditText
-
-        android:id="@+id/startDate"
-
-        android:layout_width="match_parent"
-
-        android:layout_height="wrap_content"
-
-        android:hint="start date"
-
-        android:ems="10"
-
-        android:inputType="datetime" />
+      </Spinner>
 
 
 
     <EditText
 
-        android:id="@+id/endDate"
+        android:id="@+id/tasks"
 
         android:layout_width="match_parent"
 
         android:layout_height="wrap_content"
 
-        android:hint="end date"
+        android:hint="task"
 
         android:ems="10"
 
-        android:inputType="date" >
+        android:inputType="text" />
 
 
-        <requestFocus />
+
+    <EditText
+
+        android:id="@+id/coments"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:hint="comments"
+
+        android:ems="10"
+
+        android:inputType="textMultiLine">
+
+
+    </EditText>
+
+    <EditText
+
+        android:id="@+id/dte"
+
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+
+        android:hint="date"
+
+        android:ems="10"
+
+        android:inputType="date">
+
 
     </EditText>
 

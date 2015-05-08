@@ -3,4 +3,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string-array name="projects">
+
+        <item>web-based application</item>
+        <item>desktop application</item>
+        <item>mobile-based application</item>
+        <item>ERP- applications</item>
+    </string-array>
 </resources>

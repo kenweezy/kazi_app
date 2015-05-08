@@ -1,13 +1,10 @@
 package com.app.kenweezy.kazi_app;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.app.ActionBar;
-
-import com.app.kenweezy.kazi_app.R;
 
 
 public class LoginRedirect extends ActionBarActivity {
@@ -47,10 +44,10 @@ public class LoginRedirect extends ActionBarActivity {
             Intent i=new Intent("com.app.kenweezy.kazi_app.ADDPROJECT");
             startActivity(i);
         }
-        else if(id==R.id.action_addTask){
+      /*  else if(id==R.id.action_addTask){
             Intent i=new Intent("com.app.kenweezy.kazi_app.ADDTASK");
             startActivity(i);
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }

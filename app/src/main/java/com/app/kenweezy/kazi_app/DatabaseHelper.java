@@ -17,7 +17,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME="kazi_app.db";
     private static final int SCHEMA_VERSION=1;
     private static final String EMPLOYEE_TABLE="CREATE TABLE employee(eid INTEGER PRIMARY KEY AUTOINCREMENT,first_name TEXT,last_name TEXT,phone TEXT,email TEXT,password TEXT);";
-    private static final String PROJECTS_TABLE="CREATE TABLE projects(pid INTEGER PRIMARY KEY AUTOINCREMENT,project_name TEXT,start_date TEXT,end_date TEXT);";
+    private static final String PROJECTS_TABLE="CREATE TABLE projects(pid INTEGER PRIMARY KEY AUTOINCREMENT,project_name TEXT,task TEXT,comments TEXT,date TEXT);";
     private static final String TASK_TABLE="CREATE TABLE tasks(tid INTEGER PRIMARY KEY AUTOINCREMENT,eid INTEGER,pid INTEGER,date_done TEXT,task TEXT,time_taken TEXT,comments TEXT);";
 
     public DatabaseHelper(Context context) {
@@ -72,13 +72,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         this.getWritableDatabase().insert("employee", null, cv);
     }
 
-    public void insertProjects(String pname, String sdate,
-                               String edate) {
+    public void insertProjects(String pname, String task,
+                               String comments,String date) {
         ContentValues cv=new ContentValues();
 
         cv.put("project_name", pname);
-        cv.put("start_date", sdate);
-        cv.put("end_date", edate);
+        cv.put("task", task);
+        cv.put("comments", comments);
+        cv.put("date", date);
 
 
 

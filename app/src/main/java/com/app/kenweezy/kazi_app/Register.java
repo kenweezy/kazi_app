@@ -1,17 +1,14 @@
 package com.app.kenweezy.kazi_app;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.app.ActionBar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import com.app.kenweezy.kazi_app.R;
 
 
 public class Register extends ActionBarActivity {
@@ -60,7 +57,9 @@ public class Register extends ActionBarActivity {
                 else{
 
                     db.insertEmployee(fname,lname,pnumber,email,paswd);
-                    Toast.makeText(getApplicationContext(), "Account Successfully Created ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Account Successfully Created, you can now login ", Toast.LENGTH_LONG).show();
+                    Intent i=new Intent("com.app.kenweezy.kazi_app.LOGIN");
+                    startActivity(i);
 
 
                 }

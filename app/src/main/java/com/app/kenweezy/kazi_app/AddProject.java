@@ -1,16 +1,28 @@
 package com.app.kenweezy.kazi_app;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.app.ActionBar;
-
-import com.app.kenweezy.kazi_app.R;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class AddProject extends ActionBarActivity {
+    EditText date;
+    EditText task;
+    EditText comments;
+    Spinner spin;
+    ArrayAdapter<CharSequence> adapter;
+    String spinerItem;
+    Button add;
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +30,55 @@ public class AddProject extends ActionBarActivity {
         setContentView(R.layout.add_project);
         android.support.v7.app.ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
+        db=new DatabaseHelper(this);
+
+        date=(EditText) findViewById(R.id.dte);
+        task=(EditText) findViewById(R.id.tasks);
+        comments=(EditText) findViewById(R.id.coments);
+        spin=(Spinner) findViewById(R.id.spinner);
+        add=(Button) findViewById(R.id.add);
+
+        adapter=ArrayAdapter.createFromResource(this,R.array.projects,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spin.setAdapter(adapter);
+
+        spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                spinerItem=parent.getItemAtPosition(position).toString();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String datess=date.getText().toString();
+                String taskss=task.getText().toString();
+                String comentss=comments.getText().toString();
+
+                if(spinerItem.isEmpty()||datess.isEmpty()||taskss.isEmpty()||comentss.isEmpty()){
+
+                    Toast.makeText(getApplicationContext(), "PLEASE PROVIDE VALUES TO ALL FIELDS", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                else{
+
+                    db.insertProjects(spinerItem,taskss,comentss,datess);
+                    Toast.makeText(getApplicationContext(), "Task Successfully Added", Toast.LENGTH_LONG).show();
+                    Intent i=new Intent("com.app.kenweezy.kazi_app.ADDPROJECT");
+                    startActivity(i);
+
+                }
+            }
+        });
 
     }
 
@@ -47,10 +108,10 @@ public class AddProject extends ActionBarActivity {
             Intent i=new Intent("com.app.kenweezy.kazi_app.ADDPROJECT");
             startActivity(i);
         }
-        else if(id==R.id.action_addTask){
+      /*  else if(id==R.id.action_addTask){
             Intent i=new Intent("com.app.kenweezy.kazi_app.ADDTASK");
             startActivity(i);
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
